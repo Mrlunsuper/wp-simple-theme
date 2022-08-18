@@ -1,0 +1,12 @@
+#primary-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+#primary-menu > li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.align-items-center {
+    align-items: center;
+}

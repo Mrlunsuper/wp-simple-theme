@@ -15,7 +15,7 @@
 		<title><?php wp_title(); ?></title>
 		<?php wp_head(); ?>
 	</head>
-	<body>
+	<body <?php body_class(); ?>>
 		<div class="site-main">
 			<header id="site-main-header">
 				<div class="container">

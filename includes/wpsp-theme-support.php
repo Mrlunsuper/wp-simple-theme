@@ -45,7 +45,7 @@ if ( ! function_exists( 'wpsp_add_theme_support' ) ) {
 				'uploads'       => true,
 			)
 		);
-
+		add_theme_support( 'widgets' );
 		add_theme_support(
 			'editor-color-palette',
 			array(
@@ -80,3 +80,30 @@ if ( ! function_exists( 'wpsp_add_theme_support' ) ) {
 }
 
 add_action( 'after_setup_theme', 'wpsp_add_theme_support' );
+
+
+/**
+ * Register widget area.
+ */
+if ( ! function_exists( 'wpsp_register_widget_area' ) ) {
+	/**
+	 * Register widget area.
+	 *
+	 * @since 1.0.0
+	 */
+	function wpsp_register_widget_area() {
+		register_sidebar(
+			array(
+				'name'          => __( 'Sidebar', 'wp-simple' ),
+				'id'            => 'sidebar-1',
+				'description'   => __( 'Add widgets here.', 'wp-simple' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+	}
+}
+
+add_action( 'widgets_init', 'wpsp_register_widget_area' );

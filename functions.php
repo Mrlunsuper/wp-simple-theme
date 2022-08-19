@@ -22,7 +22,7 @@ if ( ! function_exists( 'wp_simple_load_include' ) ) {
 	 */
 	function wp_simple_load_include() {
 		$prefix        = 'wpsp-';
-		$theme_include = [ 'theme-menu', 'theme-assets', 'theme-support', 'theme-tweak' ];
+		$theme_include = [ 'theme-functions', 'theme-menu', 'theme-assets', 'theme-support', 'theme-tweak', 'theme-query' ];
 		$theme_path    = WP_SIMPLE_INC . '/' . $prefix;
 		foreach ( $theme_include as $include ) {
 			$path = $theme_path . $include . '.php';

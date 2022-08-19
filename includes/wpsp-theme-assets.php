@@ -12,8 +12,8 @@ if ( ! function_exists( 'wpsp_enqueue_style' ) ) {
 	 * @since 1.0.0
 	 */
 	function wpsp_enqueue_style() {
+		wp_enqueue_style( 'wpsp-milligram', WP_SIMPLE_CSS . '/milligram.css', [], WP_SIMPLE_VERSION, 'all' );
 		wp_enqueue_style( 'wpsp-style', WP_SIMPLE_CSS . '/style.css', [], WP_SIMPLE_VERSION, 'all' );
-		wp_enqueue_style( 'wpsp-milligram', WP_SIMPLE_CSS . '/milligram.min.css', [], WP_SIMPLE_VERSION, 'all' );
 	}
 }
 
@@ -26,6 +26,8 @@ if ( ! function_exists( 'wpsp_enqueue_script' ) ) {
 	 */
 	function wpsp_enqueue_script() {
 		wp_enqueue_script( 'wpsp-script', WP_SIMPLE_JS . '/main.js', [ 'jquery' ], WP_SIMPLE_VERSION, true );
+		// Lazysizes.
+		wp_enqueue_script( 'wpsp-lazysizes', WP_SIMPLE_JS . '/lazysizes.min.js', [ 'jquery' ], WP_SIMPLE_VERSION, true );
 	}
 }
 

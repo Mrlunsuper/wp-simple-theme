@@ -18,3 +18,20 @@ if ( ! function_exists( 'cath_that_image' ) ) {
 		return $image_url[0];
 	}
 }
+
+if ( ! function_exists( 'wpsp_log' ) ) {
+	/**
+	 * Log something.
+	 *
+	 * @param mixed $data Data to log.
+	 */
+	function wpsp_log( $data ) {
+		if ( WP_DEBUG === true ) {
+			if ( is_array( $data ) || is_object( $data ) ) {
+				error_log( print_r( $data, true ) );
+			} else {
+				error_log( $data );
+			}
+		}
+	}
+}

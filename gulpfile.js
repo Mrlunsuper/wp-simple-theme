@@ -10,9 +10,16 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./assets/css'));
     }
 );
+gulp.task('miligram-sass', function() {
+    return gulp.src('./assets/milligram/milligram.sass')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(gulp.dest('./assets/css'));
+    }
+);
 
 gulp.task('watch', function() {
     gulp.watch('./assets/scss/**/*.scss', gulp.series('sass'));
+    //gulp.watch('./assets/milligram/**/*.sass', gulp.series('miligram-sass'));
 });
 
 gulp.task('default', gulp.series('sass', 'watch'));

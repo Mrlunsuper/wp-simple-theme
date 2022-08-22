@@ -10,7 +10,7 @@ get_header(); ?>
 <div class="site-main">
 	<div class="container">
 		<div class="row">
-			<div class="column column-75">
+			<div class="col-8">
 				<?php
 				if ( have_posts() ) :
 					while ( have_posts() ) :
@@ -20,7 +20,7 @@ get_header(); ?>
 				endif;
 				?>
 			</div>
-			<div class="column column-25">
+			<div class="col-4">
 				<?php get_sidebar(); ?>
 			</div>
 		</div>

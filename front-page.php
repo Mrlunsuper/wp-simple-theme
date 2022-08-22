@@ -8,7 +8,7 @@
 get_header();
 ?>
 <div class="container">
-	<div class="row flex-wrap">
+	<div class="row">
 		<?php
 		$latest_post = wpsp_get_latest_posts( 10 );
 		if ( $latest_post->have_posts() ) :

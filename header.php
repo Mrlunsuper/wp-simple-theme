@@ -12,7 +12,9 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><?php wp_title(); ?></title>
+		<title>
+			<?php bloginfo( 'name' ); ?> | <?php is_front_page() ? bloginfo( 'description' ) : wp_title(); ?>
+		</title>
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
@@ -20,11 +22,35 @@
 			<header id="site-main-header">
 				<div class="container">
 					<div class="row align-items-center">
-						<div class="site-main-header-logo column column-25">
+						<?php if ( ! display_header_text() ) : ?>
+						<div class="site-main-header-logo col-4">
 							<?php the_custom_logo(); ?>
 						</div>
-						<div class="site-main-header-menu column column-75">
-							<?php wp_nav_menu( [ 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ] ); ?>
+						<?php else : ?>
+						<div class="site-main-header-title col-4">
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						</div>
+						<?php endif; ?>
+						<div class="site-main-header-menu col-8">
+							<label for="menu-toggle" style="display:none">
+								<span class="screen-reader-text"><?php _e( 'Menu', 'wp-simple' ); ?></span>
+								<span class="menu-toggle-icon">
+									<span class="menu-icon"></span>
+									<span class="menu-icon"></span>
+									<span class="menu-icon"></span>
+								</span>
+
+							</label>
+							<input type="checkbox" name="menu-toggle" id="menu-toggle" style="display:none">
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'primary',
+									'menu_id'        => 'primary-menu',
+									'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+								)
+							);
+							?>
 						</div>
 					</div>
 				</div>

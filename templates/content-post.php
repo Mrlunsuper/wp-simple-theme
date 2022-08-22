@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
-<div class="column column-25">
+<div class="col-4">
 	<div class="post-card">
 		<div class="post-card-inner">
 			<div class="post-card-image">
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="post-card-content">
 				<h2 class="post-card-title">
 					<a href="<?php the_permalink(); ?>">
-						<?php the_title(); ?>
+						<?php the_title( '<h3>', '</h3>' ); ?>
 					</a>
 				</h2>
 				<div class="post-card-excerpt">

@@ -1,5 +1,2 @@
 node_modules
 package-lock.json
-assets/milligram
-assets/milligram/**
-assets/scss/**

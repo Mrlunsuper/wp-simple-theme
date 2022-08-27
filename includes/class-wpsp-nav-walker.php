@@ -20,7 +20,7 @@ class WPSP_Nav_Walker extends Walker_Nav_Menu {
 	 */
 	public function start_el( &$output, $item, $depth = 0, $args = \null, $id = 0 ) {
 		// Add inline style for the menu item.
-		$menu_item_color = get_theme_mod( 'wpsp_menu_items_color' );
+		$menu_item_color = get_theme_mod( 'wpsp_menu_items_color', '#ffffff' );
 		$output         .= '<li class="menu-item menu-item-' . $item->ID . '">';
 		$output         .= '<a href="' . $item->url . '" class="menu-link" style="color: ' . $menu_item_color . '">';
 		$output         .= $item->title;

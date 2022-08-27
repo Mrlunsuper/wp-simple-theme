@@ -94,10 +94,9 @@ if ( ! function_exists( 'wpsp_customize_css' ) ) {
 	 * Print inline style.
 	 */
 	function wpsp_customize_css() {
-		$menu_items_color        = get_theme_mod( 'wpsp_menu_items_color' );
-		$menu_items_hover_color  = get_theme_mod( 'wpsp_menu_items_hover_color' );
-		$menu_background_color   = get_theme_mod( 'wpsp_menu_background_color' );
-		$header_background_color = get_theme_mod( 'wpsp_header_background_color' );
+		$menu_items_color        = get_theme_mod( 'wpsp_menu_items_color', '#FFFFFF' );
+		$menu_items_hover_color  = get_theme_mod( 'wpsp_menu_items_hover_color', '#ababab' );
+		$header_background_color = get_theme_mod( 'wpsp_header_background_color', '#000000' );
 		$site_title_color        = get_header_textcolor();
 		?>
 	<style type="text/css">

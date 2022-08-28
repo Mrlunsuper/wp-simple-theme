@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="post-card">
 		<div class="post-card-inner">
 			<div class="post-card-image">
-				<a href="<?php the_permalink(); ?>">
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>">
 				<?php if ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail( 'thumbnail', [ 'class' => 'lazyload' ] ); ?>
 				<?php else : ?>
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 			<div class="post-card-content">
 				<h2 class="post-card-title">
-					<a href="<?php the_permalink(); ?>">
+					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>">
 						<?php the_title( '<h3>', '</h3>' ); ?>
 					</a>
 				</h2>

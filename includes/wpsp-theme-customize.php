@@ -106,7 +106,7 @@ if ( ! function_exists( 'wpsp_customize_css' ) ) {
 		.menu-item a:hover {
 			color: <?php echo esc_attr( $menu_items_hover_color ); ?>;
 		}
-		#site-main-header {
+		body > .site-nav {
 			background-color: <?php echo esc_attr( $header_background_color ); ?>;
 		}
 		.site-title a{

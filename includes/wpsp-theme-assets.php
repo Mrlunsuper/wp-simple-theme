@@ -12,7 +12,9 @@ if ( ! function_exists( 'wpsp_enqueue_style' ) ) {
 	 * @since 1.0.0
 	 */
 	function wpsp_enqueue_style() {
-		wp_enqueue_style( 'wpsp-grid', WP_SIMPLE_CSS . '/grid.css', array(), WP_SIMPLE_VERSION, 'all' );
+		//wp_enqueue_style( 'water-style', 'https://cdn.jsdelivr.net/npm/picnic', array(), WP_SIMPLE_VERSION, 'all' );
+		wp_enqueue_style( 'normalize-css', WP_SIMPLE_CSS . '/normalize.css', array(), WP_SIMPLE_VERSION, 'all' );
+		//wp_enqueue_style( 'bootstrap-grid', WP_SIMPLE_CSS . '/bootstrap-grid.css', array(), WP_SIMPLE_VERSION, 'all' );
 		wp_enqueue_style( 'wpsp-style', WP_SIMPLE_CSS . '/style.css', array(), WP_SIMPLE_VERSION, 'all' );
 	}
 }

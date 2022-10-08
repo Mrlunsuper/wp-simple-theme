@@ -68,3 +68,5 @@ if ( ! function_exists( 'wpsp_clean_wp_head' ) ) {
 }
 
 add_action( 'init', 'wpsp_clean_wp_head' );
+
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
